@@ -10,7 +10,7 @@ function NavBar({ currentPage }) {
               : "px-5 py-2"
           }
         >
-          <a href="/">Cadastrar Gasto</a>
+          <a href="/">Cadastrar Gastos</a>
         </li>
         <li
           className={
