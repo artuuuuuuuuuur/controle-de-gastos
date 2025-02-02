@@ -1,14 +1,20 @@
-import './App.css'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import AddGasto from "./Components/Pages/AddGasto";
+import Graficos from "./Components/Pages/Graficos";
 
 function App() {
-
   return (
-    <div className=''>
-      <div>
-        <h1 className='text-red-400'>Hello World</h1>
+    <BrowserRouter>
+      <div className="bg-gray-300 p-10 h-screen">
+        <Routes>
+          <Route index element={<AddGasto />} />
+          <Route path="grafico" element={<Graficos />} />
+        </Routes>
       </div>
-    </div>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
+
