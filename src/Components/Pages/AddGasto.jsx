@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import NavBar from "../NavBar";
-import { addGasto, getGastos } from "../../api";
+import { addGasto } from "../../api";
 
-function AddGasto() {
+function AddGasto({ gastosArray }) {
   const [gastos, setGastos] = useState([]);
   const [form, setForm] = useState({
     nome: "",
@@ -11,23 +12,16 @@ function AddGasto() {
     categoria: "",
   });
 
-  // Atualiza o estado conforme o usuário digita
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Cadastra novo gasto no backend
   const listarGastos = async (e) => {
     e.preventDefault();
 
     try {
-      // Envia o gasto corretamente como um objeto (sem array)
       const newGasto = await addGasto(form);
-
-      // Atualiza a lista no frontend
       setGastos([...gastos, newGasto]);
-
-      // Limpa o formulário
       setForm({ nome: "", valor: "", data: "", categoria: "" });
     } catch (error) {
       console.error(
@@ -36,11 +30,6 @@ function AddGasto() {
       );
     }
   };
-
-  // Busca os gastos ao carregar a página (apenas 1 vez)
-  useEffect(() => {
-    getGastos().then(setGastos).catch(console.error);
-  }, []);
 
   return (
     <div className="h-full max-h-full flex flex-col">
@@ -99,10 +88,7 @@ function AddGasto() {
                 <option value="Etc">Etc</option>
               </select>
             </label>
-            <button
-              className=""
-              type="submit"
-            >
+            <button className="" type="submit">
               Enviar
             </button>
           </form>
@@ -111,7 +97,7 @@ function AddGasto() {
         <section className="mt-4">
           <h1>Lista de Gastos</h1>
           <ul className="">
-            {gastos.map((gasto, index) => (
+            {gastosArray.map((gasto, index) => (
               <li key={index} className="mt-1">
                 <strong>{gasto.nome}</strong> - R${gasto.valor} - {gasto.data} -{" "}
                 {gasto.categoria}
