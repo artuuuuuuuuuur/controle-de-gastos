@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/gastos";
+const API_URL = "https://controle-de-gastos-jjiw.onrender.com/gastos";
 
 export const getGastos = async () => {
   const res = await axios.get(API_URL);

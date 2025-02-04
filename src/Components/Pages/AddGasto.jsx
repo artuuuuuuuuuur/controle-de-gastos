@@ -86,7 +86,7 @@ function AddGasto({ gastosArray }) {
                 <option value="Curso">Curso</option>
                 <option value="Streaming">Streaming</option>
                 <option value="Transporte">Transporte</option>
-                <option value="Etc">Etc</option>
+                <option value="Outro">Outro</option>
               </select>
             </label>
             <button className="" type="submit">
