@@ -54,14 +54,32 @@ function Graficos({ gastosArray }) {
       <NavBar currentPage={"grafico"} />
       <div className="bg-white grow overflow-auto rounded-3xl p-5">
         <div className="flex">
-          <h1 className="text-xl font-bold mb-4">Seus gastos</h1>
+          <h1 className="text-3xl font-bold">Seus gastos</h1>
           Gráfico de Colunas
           <Switch onClick={() => setType(!type)} defaultChecked />
           Gráfico de Pizza
         </div>
-        <Chart data={categoriasData} options={options} type={type} category={"categoria"} optionsBar={options[1]} />
-        <Chart data={nomesData} options={options} type={type} category={"nomes"} optionsBar={options[1]} />
-        <Chart data={mesesData} options={options} type={type} category={"mês"} optionsBar={options[1]} />
+        <Chart
+          data={categoriasData}
+          options={options}
+          type={type}
+          category={"categoria"}
+          optionsBar={options[1]}
+        />
+        <Chart
+          data={nomesData}
+          options={options}
+          type={type}
+          category={"nomes"}
+          optionsBar={options[1]}
+        />
+        <Chart
+          data={mesesData}
+          options={options}
+          type={type}
+          category={"mês"}
+          optionsBar={options[1]}
+        />
       </div>
     </div>
   );
