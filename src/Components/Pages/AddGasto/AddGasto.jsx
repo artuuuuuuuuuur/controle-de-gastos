@@ -118,7 +118,7 @@ function AddGasto({ gastosArray }) {
         </section>
 
         <section className="mt-4">
-          <h1>Lista de Gastos</h1>
+          <h2 className="text-2xl font-bold text-gray-600">Lista de Gastos</h2>
           <BasicTable gastos={gastosArray} />
         </section>
       </div>
