@@ -1,6 +1,6 @@
 {
   "name": "trabalho-final",
-  "private": true,
+  "private": "false",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.3",
     "@tailwindcss/vite": "^4.0.3",
     "axios": "^1.7.9",
     "chart.js": "^4.4.7",

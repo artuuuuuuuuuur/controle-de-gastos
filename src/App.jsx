@@ -7,9 +7,11 @@ import { getGastos } from "./api";
 
 function App() {
   const [gastos, setGastos] = useState([]);
+  
 
   useEffect(() => {
     getGastos().then(setGastos).catch(console.error);
+    
   }, [gastos]);
 
   return (

@@ -11,10 +11,14 @@ function AddGasto({ gastosArray }) {
     data: "",
     categoria: "",
   });
-
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+  
+  const totalGastos = gastosArray.reduce(
+    (total, gasto) => total + parseFloat(gasto.valor),
+    0
+  );
 
   const listarGastos = async (e) => {
     e.preventDefault();
@@ -37,6 +41,9 @@ function AddGasto({ gastosArray }) {
       <div className="bg-white grow overflow-auto rounded-3xl p-5">
         <section>
           <h1>Cadastrar Gastos</h1>
+            <span>
+            Quanto você gastou: R${totalGastos}
+            </span>
           <form className="" onSubmit={listarGastos}>
             <label className="block">
               Nome:
